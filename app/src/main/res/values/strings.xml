@@ -6,4 +6,8 @@
     <string name="login_password">Password</string>
     <string name="login_login">Login</string>
     <string name="login_register">Go To Register</string>
+
+    <string name="register_title">Register</string>
+    <string name="register_nama">Nama</string>
+    <string name="register_username">Username</string>
 </resources>

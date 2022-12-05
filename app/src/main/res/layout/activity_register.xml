@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color5"
+    tools:context=".RegisterActivity">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="75dp"
+        android:text="@string/register_title"
+        android:textColor="@color/color3"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/register_etNama"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="75dp"
+        android:background="@drawable/layout_rounded"
+        android:backgroundTint="@color/white"
+        android:ems="10"
+        android:hint="@string/register_nama"
+        android:inputType="textPersonName"
+        android:textColor="@color/black"
+        android:textColorHint="@android:color/darker_gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <EditText
+        android:id="@+id/register_etUsername"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/layout_rounded"
+        android:backgroundTint="@color/white"
+        android:ems="10"
+        android:hint="@string/register_username"
+        android:inputType="textPersonName"
+        android:textColor="@color/black"
+        android:textColorHint="@android:color/darker_gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/register_etNama" />
+</androidx.constraintlayout.widget.ConstraintLayout>
