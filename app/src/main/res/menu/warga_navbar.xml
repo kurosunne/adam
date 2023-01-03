@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/to_berita_warga"
+        android:icon="@drawable/ic_baseline_menu_book_24"
+        android:title="Berita" />
+    <item
+        android:id="@+id/to_laporan_warga"
+        android:icon="@drawable/ic_baseline_report_24"
+        android:title="Laporan" />
+    <item
+        android:id="@+id/to_tambah_warga"
+        android:icon="@drawable/ic_baseline_add_24"
+        android:title="Lapor" />
+    <item
+        android:id="@+id/to_hotline_warga"
+        android:icon="@drawable/ic_baseline_phone_in_talk_24"
+        android:title="Hotline" />
+    <item
+        android:id="@+id/to_akun_warga"
+        android:icon="@drawable/ic_baseline_account_circle_24"
+        android:title="Akun" />
+</menu>

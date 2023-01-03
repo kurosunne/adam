@@ -35,29 +35,31 @@ class MainActivity : AppCompatActivity() {
         }
     }
     fun btLoginClicked(){
-        val strReq = object : StringRequest(
-            Method.POST,
-            "$WS_HOST/getwarga",
-            Response.Listener {
-                val obj: JSONArray = JSONArray(it)
-                if (obj.length() == 0) {
-                    Toast.makeText(this, "User Tidak Ada", Toast.LENGTH_SHORT).show()
-                } else {
-                    Toast.makeText(this, "User Ada", Toast.LENGTH_SHORT).show()
-                }
-            },
-            Response.ErrorListener {
-                Toast.makeText(this, it.toString(), Toast.LENGTH_SHORT).show()
-            }
-        ) {
-            override fun getParams(): MutableMap<String, String>? {
-                val params = HashMap<String, String>()
-                params["username"] = etEmail.text.toString()
-                return params
-            }
-        }
-        val queue: RequestQueue = Volley.newRequestQueue(this)
-        queue.add(strReq)
+        var go = Intent(this,WargaActivity::class.java)
+        startActivity(go)
+//        val strReq = object : StringRequest(
+//            Method.POST,
+//            "$WS_HOST/getwarga",
+//            Response.Listener {
+//                val obj: JSONArray = JSONArray(it)
+//                if (obj.length() == 0) {
+//                    Toast.makeText(this, "User Tidak Ada", Toast.LENGTH_SHORT).show()
+//                } else {
+//                    Toast.makeText(this, "User Ada", Toast.LENGTH_SHORT).show()
+//                }
+//            },
+//            Response.ErrorListener {
+//                Toast.makeText(this, it.toString(), Toast.LENGTH_SHORT).show()
+//            }
+//        ) {
+//            override fun getParams(): MutableMap<String, String>? {
+//                val params = HashMap<String, String>()
+//                params["username"] = etEmail.text.toString()
+//                return params
+//            }
+//        }
+//        val queue: RequestQueue = Volley.newRequestQueue(this)
+//        queue.add(strReq)
     }
 
     fun btRegisterClicked(){

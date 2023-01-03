@@ -17,6 +17,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".WargaActivity"
+            android:exported="false" />
+        <activity
             android:name=".PolisiEditAccount"
             android:exported="false">
             <meta-data
