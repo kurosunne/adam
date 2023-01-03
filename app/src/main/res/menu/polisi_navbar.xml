@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/to_laporan_polisi"
+        android:title="Laporan" />
+    <item
+        android:id="@+id/to_edit_account_polisi"
+        android:title="Edit Account" />
+    <item
+        android:id="@+id/do_logout_polisi"
+        android:title="Logout" />
+</menu>

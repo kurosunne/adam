@@ -10,4 +10,7 @@
     <string name="register_title">Register</string>
     <string name="register_nama">Nama</string>
     <string name="register_username">Username</string>
+
+    <string name="polisi_laporan">Report</string>
+    <string name="polisi_edit_akun">Edit Account</string>
 </resources>
