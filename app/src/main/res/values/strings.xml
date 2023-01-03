@@ -21,6 +21,6 @@
     </string-array>
 
     <!--Halaman Polisi-->
-    <string name="polisi_laporan">Report</string>
-    <string name="polisi_edit_akun">Edit Account</string>
+    <string name="polisi_laporan">Laporan</string>
+    <string name="polisi_edit_akun">Edit Akun</string>
 </resources>

@@ -3,11 +3,10 @@
 
     <item
         android:id="@+id/to_laporan_polisi"
+        android:icon="@drawable/ic_baseline_receipt_long_24"
         android:title="Laporan" />
     <item
         android:id="@+id/to_edit_account_polisi"
+        android:icon="@drawable/ic_baseline_account_circle_24"
         android:title="Edit Account" />
-    <item
-        android:id="@+id/do_logout_polisi"
-        android:title="Logout" />
 </menu>
