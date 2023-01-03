@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var etPassword:EditText
     lateinit var btLogin:Button
     lateinit var btRegister:Button
-    val WS_HOST = "http://10.0.2.2:8000/api"
+    val WS_HOST = "http://10.0.2.2:3000/api"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
