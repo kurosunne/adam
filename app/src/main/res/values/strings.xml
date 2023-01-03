@@ -1,16 +1,26 @@
 <resources>
     <string name="app_name">Adam</string>
-
-    <string name="login_welcome">Welcome To Adam</string>
-    <string name="login_username">Username</string>
+    <!--Halaman Login-->
+    <string name="login_title">Welcome To Adam</string>
+    <string name="login_email">Email</string>
     <string name="login_password">Password</string>
     <string name="login_login">Login</string>
     <string name="login_register">Go To Register</string>
 
-    <string name="register_title">Register</string>
-    <string name="register_nama">Nama</string>
-    <string name="register_username">Username</string>
+    <!--Halaman Register-->
+    <string name="register_title">Register To Adam</string>
+    <string name="register_email">Email</string>
+    <string name="register_name">Full Name</string>
+    <string name="register_password">Password</string>
+    <string name="register_confirm">Confirm Password</string>
+    <string name="register_register">Register</string>
+    <string name="register_login">Back To Login</string>
+    <string-array name="role">
+        <item>Warga</item>
+        <item>Polisi</item>
+    </string-array>
 
+    <!--Halaman Polisi-->
     <string name="polisi_laporan">Report</string>
     <string name="polisi_edit_akun">Edit Account</string>
 </resources>

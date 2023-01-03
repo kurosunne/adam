@@ -1,5 +1,6 @@
 package com.adam
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -12,7 +13,7 @@ import com.android.volley.toolbox.Volley
 import org.json.JSONArray
 
 class MainActivity : AppCompatActivity() {
-    lateinit var etUsername:EditText
+    lateinit var etEmail:EditText
     lateinit var etPassword:EditText
     lateinit var btLogin:Button
     lateinit var btRegister:Button
@@ -21,58 +22,46 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        etUsername = findViewById(R.id.login_etUsername)
+        etEmail = findViewById(R.id.login_etEmail)
         etPassword = findViewById(R.id.login_etPassword)
         btLogin = findViewById(R.id.login_btLogin)
         btRegister = findViewById(R.id.login_btRegister)
 
         btLogin.setOnClickListener {
-            val strReq = object:StringRequest(
-                Method.POST,
-                "$WS_HOST/getwarga",
-                Response.Listener {
-                    val obj: JSONArray = JSONArray(it)
-                    if (obj.length()==0){
-                        Toast.makeText(this,"User Tidak Ada",Toast.LENGTH_SHORT).show()
-                    }else{
-                        Toast.makeText(this,"User Ada",Toast.LENGTH_SHORT).show()
-                    }
-                },
-                Response.ErrorListener {
-                    Toast.makeText(this,it.toString(),Toast.LENGTH_SHORT).show()
-                }
-            ){
-                override fun getParams(): MutableMap<String,String>? {
-                    val params = HashMap<String, String>()
-                    params["username"] = etUsername.text.toString()
-                    return params
-                }
-            }
-            val queue: RequestQueue = Volley.newRequestQueue(this)
-            queue.add(strReq)
+            btLoginClicked()
+        }
+        btRegister.setOnClickListener {
+            btRegisterClicked()
         }
     }
-
-    fun getData(){
+    fun btLoginClicked(){
         val strReq = object : StringRequest(
-            Method.GET,
-            "$WS_HOST/mahasiswa",
+            Method.POST,
+            "$WS_HOST/getwarga",
             Response.Listener {
-//                val obj:JSONArray = JSONArray(it)
-//                mahasiswa.clear()
-//                for (i in 0 until obj.length()) {
-//                    val o = obj.getJSONObject(i)
-//                    val m = Mahasiswa(o.getString("nrp"), o.getString("nama"), o.getInt("umur"))
-//                    mahasiswa.add(m)
-//                    Toast.makeText(this,mahasiswa.get(mahasiswa.size-1).toString(),Toast.LENGTH_SHORT).show()
-//
-//                }
+                val obj: JSONArray = JSONArray(it)
+                if (obj.length() == 0) {
+                    Toast.makeText(this, "User Tidak Ada", Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(this, "User Ada", Toast.LENGTH_SHORT).show()
+                }
             },
             Response.ErrorListener {
-                Toast.makeText(this,it.toString(),Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, it.toString(), Toast.LENGTH_SHORT).show()
             }
-        ){}
+        ) {
+            override fun getParams(): MutableMap<String, String>? {
+                val params = HashMap<String, String>()
+                params["username"] = etEmail.text.toString()
+                return params
+            }
+        }
         val queue: RequestQueue = Volley.newRequestQueue(this)
         queue.add(strReq)
+    }
+
+    fun btRegisterClicked(){
+        var go = Intent(this,RegisterActivity::class.java)
+        startActivity(go)
     }
 }

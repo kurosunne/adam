@@ -11,8 +11,8 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="75dp"
-        android:text="@string/login_welcome"
+        android:layout_marginTop="45dp"
+        android:text="@string/login_title"
         android:textColor="@color/color3"
         android:textSize="35sp"
         android:textStyle="bold"
@@ -21,14 +21,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/login_etUsername"
+        android:id="@+id/login_etEmail"
         android:layout_width="350dp"
         android:layout_height="50dp"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="90dp"
         android:background="@drawable/layout_rounded"
         android:backgroundTint="@color/white"
         android:ems="10"
-        android:hint="@string/login_username"
+        android:hint="@string/login_email"
         android:inputType="textPersonName"
         android:textColor="@color/black"
         android:textColorHint="@android:color/darker_gray"
@@ -50,7 +50,7 @@
         android:textColorHint="@android:color/darker_gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_etUsername" />
+        app:layout_constraintTop_toBottomOf="@+id/login_etEmail" />
 
     <Button
         android:id="@+id/login_btLogin"
