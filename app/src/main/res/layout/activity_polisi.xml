@@ -21,14 +21,13 @@
         android:id="@+id/navbar_police"
         android:layout_width="412dp"
         android:layout_height="60dp"
-        android:layout_marginTop="672dp"
         app:itemIconTint="@color/bottom_nav_color"
         app:itemTextColor="@color/bottom_nav_color"
         app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/PolisiFragment"
         app:menu="@menu/polisi_navbar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

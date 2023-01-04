@@ -2,6 +2,7 @@ package com.adam
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class PolisiActivity : AppCompatActivity() {
@@ -9,12 +10,15 @@ class PolisiActivity : AppCompatActivity() {
     private lateinit var fragmentLaporan: LaporanFragment
     private lateinit var fragmentEditakun: EditAkunPolisiFragment
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_polisi)
 
         navbar = findViewById(R.id.navbar_police)
         fragmentLaporan()
+
+
         navbar.setOnItemSelectedListener{
             when(it.itemId){
                 R.id.to_laporan_polisi->{
