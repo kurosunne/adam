@@ -25,9 +25,6 @@ class PolisiEditAccount : AppCompatActivity() {
                 R.id.to_edit_account_polisi->{
 
                 }
-                R.id.do_logout_polisi->{
-
-                }
             }
             true
         }

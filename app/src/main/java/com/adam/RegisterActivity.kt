@@ -3,10 +3,7 @@ package com.adam
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.EditText
-import android.widget.Spinner
+import android.widget.*
 import com.android.volley.RequestQueue
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
@@ -46,33 +43,49 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     fun btRegisterClicked(){
-        val strReq = object:StringRequest(
-            Method.POST,
-            "$WS_HOST/register",
-            Response.Listener {
-
-            },
-            Response.ErrorListener {
-
-            }
-        ){
-            override fun getParams(): MutableMap<String,String>? {
-                var role : String
-                if (spRole.selectedItem.toString()=="Warga"){
-                    role = "0"
+        if (etNama.text.toString().isEmpty() || etEmail.text.toString().isEmpty() || etPassword.text.toString().isEmpty() || etConfirm.text.toString().isEmpty()){
+            Toast.makeText(this,"Semua Field Harus Terisi",Toast.LENGTH_SHORT).show()
+        }else{
+            if (!android.util.Patterns.EMAIL_ADDRESS.matcher(etEmail.text.toString()).matches()){
+                Toast.makeText(this,"Format Email Salah",Toast.LENGTH_SHORT).show()
+            }else{
+                if (!etPassword.text.toString().equals(etConfirm.text.toString())){
+                    Toast.makeText(this,"Password & Confirm Password Harus Sama",Toast.LENGTH_SHORT).show()
                 }else{
-                    role = "1"
+                    val strReq = object:StringRequest(
+                        Method.POST,
+                        "$WS_HOST/register",
+                        Response.Listener {
+                            etNama.text.clear()
+                            etEmail.text.clear()
+                            etPassword.text.clear()
+                            etConfirm.text.clear()
+                            Toast.makeText(this,"Berhasil Membuat Akun",Toast.LENGTH_SHORT).show()
+                        },
+                        Response.ErrorListener {
+
+                        }
+                    ){
+                        override fun getParams(): MutableMap<String,String>? {
+                            var role : String
+                            if (spRole.selectedItem.toString()=="Warga"){
+                                role = "0"
+                            }else{
+                                role = "1"
+                            }
+                            val params = HashMap<String, String>()
+                            params["email"] = etEmail.text.toString()
+                            params["fullName"] = etNama.text.toString()
+                            params["password"] = etPassword.text.toString()
+                            params["access"] = role
+                            return params
+                        }
+                    }
+                    val queue: RequestQueue = Volley.newRequestQueue(this)
+                    queue.add(strReq)
                 }
-                val params = HashMap<String, String>()
-                params["email"] = etEmail.text.toString()
-                params["fullName"] = etNama.text.toString()
-                params["password"] = etPassword.text.toString()
-                params["access"] = role
-                return params
             }
         }
-        val queue: RequestQueue = Volley.newRequestQueue(this)
-        queue.add(strReq)
     }
 
     fun btLoginClicked(){
