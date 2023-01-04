@@ -10,6 +10,7 @@ import java.util.*
 class WargaActivity : AppCompatActivity() {
     private lateinit var bnView : BottomNavigationView
     private lateinit var hotlineFragment : WargaHotlineFragment
+    private lateinit var homeFragment : HomeFragment
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_warga)
@@ -19,6 +20,7 @@ class WargaActivity : AppCompatActivity() {
         bnView.setOnItemSelectedListener {
             when(it.itemId){
                 R.id.to_berita_warga->{
+                    swapToHomeFragment()
                     true
                 }
                 R.id.to_laporan_warga->{
@@ -46,6 +48,13 @@ class WargaActivity : AppCompatActivity() {
         hotlineFragment.arguments = bundle
         val fragmentManager = supportFragmentManager.beginTransaction()
         fragmentManager.replace(R.id.warga_frame, hotlineFragment)
+        fragmentManager.commit()
+    }
+
+    private fun swapToHomeFragment(){
+        homeFragment = HomeFragment()
+        val fragmentManager = supportFragmentManager.beginTransaction()
+        fragmentManager.replace(R.id.warga_frame, homeFragment)
         fragmentManager.commit()
     }
 }
