@@ -18,10 +18,8 @@ class LaporanFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         listlaporan = arrayListOf()
         listlaporan.add(Laporan("dummy","01-01-2002","Surabaya","Ingfo"))
-
     }
 
     override fun onCreateView(
@@ -37,7 +35,7 @@ class LaporanFragment : Fragment() {
         val verticalLayoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL,false)
         rv.layoutManager = verticalLayoutManager
 
-        laporanAdapter = LaporanAdapter(context as Activity, R.layout.fragment_laporan, listlaporan)
+        laporanAdapter = LaporanAdapter(context as Activity, R.layout.laporan, listlaporan)
         rv.adapter=laporanAdapter
         rv.addItemDecoration(DividerItemDecoration(rv.context, DividerItemDecoration.VERTICAL))
         laporanAdapter.notifyDataSetChanged()
