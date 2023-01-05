@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 
-class LaporanFragment : Fragment() {
+class LaporanPolisiFragment : Fragment() {
     private lateinit var rv: RecyclerView
     private lateinit var listlaporan: ArrayList<Laporan>
     private lateinit var laporanAdapter: LaporanAdapter

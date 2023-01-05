@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
     fun btLoginClicked(){
-        var go = Intent(this,PolisiActivity::class.java)
+        var go = Intent(this,WargaActivity::class.java)
         startActivity(go)
 //        val strReq = object : StringRequest(
 //            Method.POST,
