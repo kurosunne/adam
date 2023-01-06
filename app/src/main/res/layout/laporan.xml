@@ -9,7 +9,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="91dp"
+        android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <ImageView
@@ -30,7 +30,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Nama Laporan" />
+                android:text="Nama Laporan"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/isiLaporan"

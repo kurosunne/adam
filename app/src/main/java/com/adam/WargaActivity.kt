@@ -19,6 +19,7 @@ class WargaActivity : AppCompatActivity() {
         setContentView(R.layout.activity_warga)
 
         bnView = findViewById(R.id.warga_bnView)
+        swapToHomeFragment()
 
         bnView.setOnItemSelectedListener {
             when(it.itemId){

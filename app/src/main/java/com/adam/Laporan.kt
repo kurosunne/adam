@@ -1,7 +1,7 @@
 package com.adam
 
 
-class Laporan (
+data class Laporan (
     var namaLaporan:String,
     var tanggalLaporan:String,
     var lokasiLaporan:String,
