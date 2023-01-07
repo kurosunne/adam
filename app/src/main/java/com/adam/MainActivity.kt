@@ -50,8 +50,13 @@ class MainActivity : AppCompatActivity() {
                         var obj : JSONObject = JSONObject(it.toString())
                         Toast.makeText(this, obj.getString("message"), Toast.LENGTH_SHORT).show()
                         if (obj.getString("message").equals("logged in")){
-                            var go = Intent(this,WargaActivity::class.java)
-                            startActivity(go)
+                            if (obj.getString("access").equals("0")){
+                                var go = Intent(this,WargaActivity::class.java)
+                                startActivity(go)
+                            }else{
+                                var go = Intent(this,PolisiActivity::class.java)
+                                startActivity(go)
+                            }
                         }
                     },
                     Response.ErrorListener {
