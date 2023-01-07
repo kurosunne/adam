@@ -11,6 +11,8 @@ import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import org.json.JSONArray
+import org.json.JSONObject
+import kotlin.math.log
 
 class MainActivity : AppCompatActivity() {
     lateinit var etEmail:EditText
@@ -35,31 +37,38 @@ class MainActivity : AppCompatActivity() {
         }
     }
     fun btLoginClicked(){
-        var go = Intent(this,WargaActivity::class.java)
-        startActivity(go)
-//        val strReq = object : StringRequest(
-//            Method.POST,
-//            "$WS_HOST/getwarga",
-//            Response.Listener {
-//                val obj: JSONArray = JSONArray(it)
-//                if (obj.length() == 0) {
-//                    Toast.makeText(this, "User Tidak Ada", Toast.LENGTH_SHORT).show()
-//                } else {
-//                    Toast.makeText(this, "User Ada", Toast.LENGTH_SHORT).show()
-//                }
-//            },
-//            Response.ErrorListener {
-//                Toast.makeText(this, it.toString(), Toast.LENGTH_SHORT).show()
-//            }
-//        ) {
-//            override fun getParams(): MutableMap<String, String>? {
-//                val params = HashMap<String, String>()
-//                params["username"] = etEmail.text.toString()
-//                return params
-//            }
-//        }
-//        val queue: RequestQueue = Volley.newRequestQueue(this)
-//        queue.add(strReq)
+        if (etEmail.text.toString().isEmpty() || etPassword.text.toString().isEmpty()){
+            Toast.makeText(this,"Semua Field Harus Terisi",Toast.LENGTH_SHORT).show()
+        }else {
+            if (!android.util.Patterns.EMAIL_ADDRESS.matcher(etEmail.text.toString()).matches()) {
+                Toast.makeText(this,"Format Email Salah",Toast.LENGTH_SHORT).show()
+            }else{
+                val strReq = object : StringRequest(
+                    Method.POST,
+                    "$WS_HOST/login",
+                    Response.Listener {
+                        var obj : JSONObject = JSONObject(it.toString())
+                        Toast.makeText(this, obj.getString("message"), Toast.LENGTH_SHORT).show()
+                        if (obj.getString("message").equals("logged in")){
+                            var go = Intent(this,WargaActivity::class.java)
+                            startActivity(go)
+                        }
+                    },
+                    Response.ErrorListener {
+                        Toast.makeText(this, it.message.toString(), Toast.LENGTH_SHORT).show()
+                    }
+                ) {
+                    override fun getParams(): MutableMap<String, String>? {
+                        val params = HashMap<String, String>()
+                        params["email"] = etEmail.text.toString()
+                        params["password"] = etPassword.text.toString()
+                        return params
+                    }
+                }
+                val queue: RequestQueue = Volley.newRequestQueue(this)
+                queue.add(strReq)
+            }
+        }
     }
 
     fun btRegisterClicked(){

@@ -7,6 +7,7 @@
     tools:context=".WargaHotlineFragment">
 
     <!-- TODO: Update blank fragment layout -->
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -15,7 +16,7 @@
             android:id="@+id/textView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="45dp"
+            android:layout_marginTop="35dp"
             android:text="@string/warga_hotline_title"
             android:textColor="@color/color3"
             android:textSize="26sp"
@@ -23,6 +24,139 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:text="@string/warga_hotline_polisi_text"
+            android:textColor="@color/color1"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+        <Button
+            android:id="@+id/warga_hotline_btPolisi"
+            android:layout_width="350dp"
+            android:layout_height="58dp"
+            android:backgroundTint="@color/color1"
+            android:text="@string/warga_hotline_polisi_number"
+            android:textColor="@color/color5"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.508"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:text="@string/warga_hotline_pemadam_text"
+            android:textColor="@color/color1"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/warga_hotline_btPolisi" />
+
+        <Button
+            android:id="@+id/warga_hotline_btPemadam"
+            android:layout_width="350dp"
+            android:layout_height="58dp"
+            android:backgroundTint="@color/color1"
+            android:text="@string/warga_hotline_pemadam_number"
+            android:textColor="@color/color5"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.508"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:text="@string/warga_hotline_sar_text"
+            android:textColor="@color/color1"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/warga_hotline_btPemadam" />
+
+        <Button
+            android:id="@+id/warga_hotline_btSAR"
+            android:layout_width="350dp"
+            android:layout_height="58dp"
+            android:backgroundTint="@color/color1"
+            android:text="@string/warga_hotline_sar_number"
+            android:textColor="@color/color5"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.508"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:text="@string/warga_hotline_ambulan_text"
+            android:textColor="@color/color1"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/warga_hotline_btSAR" />
+
+        <Button
+            android:id="@+id/warga_hotline_btAmbulan"
+            android:layout_width="350dp"
+            android:layout_height="58dp"
+            android:backgroundTint="@color/color1"
+            android:text="@string/warga_hotline_ambulan_number"
+            android:textColor="@color/color5"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:text="@string/warga_hotline_listrik_text"
+            android:textColor="@color/color1"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/warga_hotline_btAmbulan" />
+
+        <Button
+            android:id="@+id/warga_hotline_btListrik"
+            android:layout_width="350dp"
+            android:layout_height="58dp"
+            android:backgroundTint="@color/color1"
+            android:text="@string/warga_hotline_listrik_number"
+            android:textColor="@color/color5"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

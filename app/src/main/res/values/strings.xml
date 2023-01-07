@@ -27,6 +27,17 @@
 
     <!--Halaman Warga-->
     <string name="warga_hotline_title">Hotline Surabaya</string>
-    <!-- TODO: Remove or change this placeholder text -->
+    <string name="warga_hotline_polisi_text">Hubungi Layanan Polisi</string>
+    <string name="warga_hotline_polisi_number">Call 110</string>
+    <string name="warga_hotline_pemadam_text">Hubungi Layanan Pemadam Kebakaran</string>
+    <string name="warga_hotline_pemadam_number">Call 113</string>
+    <string name="warga_hotline_sar_text">Hubungi Layanan SAR/BASARNAS</string>
+    <string name="warga_hotline_sar_number">Call 115</string>
+    <string name="warga_hotline_ambulan_text">Hubungi Layanan Ambulans</string>
+    <string name="warga_hotline_ambulan_number">Call 118</string>
+    <string name="warga_hotline_listrik_text">Hubungi Layanan Perbaikan Listrik</string>
+    <string name="warga_hotline_listrik_number">Call 123</string>
+
+    <!--Template -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
