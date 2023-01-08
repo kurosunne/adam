@@ -40,4 +40,13 @@
 
     <!--Template -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="laporan_kategori">
+        <item>Kecelakaan Lalu Lintas</item>
+        <item>Kebakaran</item>
+        <item>Pencurian</item>
+        <item>Orang Hilang</item>
+        <item>Kekerasan dan Penggunaan Senjata Tajam</item>
+        <item>Lain-lain</item>
+    </string-array>
 </resources>
