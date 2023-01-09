@@ -71,4 +71,17 @@
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+    <Button
+        android:id="@+id/btLogoutWarga"
+        android:layout_width="330dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="536dp"
+        android:backgroundTint="@android:color/holo_red_dark"
+        android:text="Logout"
+        android:textColor="@color/color5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

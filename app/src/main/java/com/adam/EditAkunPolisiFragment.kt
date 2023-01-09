@@ -51,10 +51,10 @@ class EditAkunPolisiFragment : Fragment() {
             var temp : List<UserEntity> = db.userDao.fetch()
             etEmail.setText(temp.get(0).email)
             etNama.setText(temp.get(0).fullName)
+            oldemail = etEmail.text.toString()
         }
 
         btEdit.setOnClickListener{
-            oldemail = etEmail.text.toString()
             if(etNama.toString().isEmpty() || etEmail.toString().isEmpty()){
                 Toast.makeText(view.context,"Semua Field Harus Terisi", Toast.LENGTH_SHORT).show()
             }
@@ -68,7 +68,7 @@ class EditAkunPolisiFragment : Fragment() {
                             etEmail.setText(temp.get(0).email)
                             etNama.setText(temp.get(0).fullName)
                         }
-                        Toast.makeText(view.context,"Berhasil update",Toast.LENGTH_SHORT).show()
+                        Toast.makeText(view.context,"Berhasil update akun",Toast.LENGTH_SHORT).show()
                     },
                     Response.ErrorListener {
                         Toast.makeText(view.context, it.message.toString(), Toast.LENGTH_SHORT).show()
