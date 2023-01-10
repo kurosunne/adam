@@ -55,9 +55,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
+            android:editable="false"
             android:ems="10"
             android:hint="Lokasi"
-            android:inputType="textPersonName"
             android:minHeight="48dp" />
 
         <EditText
