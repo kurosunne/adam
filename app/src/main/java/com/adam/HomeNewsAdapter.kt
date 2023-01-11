@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.squareup.picasso.Picasso
 
 class HomeNewsAdapter(
     var arrNews:MutableList<NewsArticle>,
@@ -25,7 +26,7 @@ class HomeNewsAdapter(
 
     override fun onBindViewHolder(holder: NewsHolder, position: Int) {
         val item = arrNews[position]
-//        holder.news_item_ivThumbnail
+        Picasso.get().load(item.urlToImage).into(holder.news_item_ivThumbnail)
         holder.news_item_tvTitle.text = item.title
         holder.news_item_tvAuthor.text = item.author
         holder.news_item_tvPublishedAt.text = item.publishedAt

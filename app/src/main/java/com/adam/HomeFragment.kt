@@ -31,38 +31,38 @@ class HomeFragment : Fragment() {
         home_tvTitle = view.findViewById(R.id.home_tvTitle)
         home_rvNews = view.findViewById(R.id.home_rvNews)
 
-//        val strReq = object: StringRequest(
-//            Method.GET,
-//            "https://newsapi.org/v2/top-headlines?country=id&apiKey=bbde352252c847a6baf3f28c8d1520d8&pageSize=10&page=1",
-//            Response.Listener {
-//                val res = JSONObject(it)
-//                arrNews.clear()
-//                val articles = res.getJSONArray("articles")
-//                for (i in 0 until articles.length()){
-//                    val article = articles.getJSONObject(i)
-//                    val article__source = article.getJSONObject("source").getString("name")
-//                    val article__title = article.getString("title")
-//                    val article__author = article.getString("author")
-//                    val article__description = article.getString("description")
-//                    val article__url = article.getString("url")
-//                    val article__urlToImage = article.getString("urlToImage")
-//                    val article__publishedAt = article.getString("publishedAt")
-//                    arrNews.add(NewsArticle(article__source, article__author,article__title,article__description,article__url,article__urlToImage,article__publishedAt))
-//                }
-//                homeNewsAdapter.notifyDataSetChanged()
-//            },
-//            Response.ErrorListener {
-//                Toast.makeText(context, "Error ${it.message}", Toast.LENGTH_SHORT).show()
-//            }
-//        ){
-//            override fun getHeaders(): MutableMap<String, String> {
-//                val headers = HashMap<String, String>()
-//                headers["User-Agent"]="Mozilla/5.0"
-//                return headers
-//            }
-//        }
-//        val queue: RequestQueue = Volley.newRequestQueue(context)
-//        queue.add(strReq)
+        val strReq = object: StringRequest(
+            Method.GET,
+            "https://newsapi.org/v2/top-headlines?country=id&apiKey=bbde352252c847a6baf3f28c8d1520d8&pageSize=10&page=1",
+            Response.Listener {
+                val res = JSONObject(it)
+                arrNews.clear()
+                val articles = res.getJSONArray("articles")
+                for (i in 0 until articles.length()){
+                    val article = articles.getJSONObject(i)
+                    val article__source = article.getJSONObject("source").getString("name")
+                    val article__title = article.getString("title")
+                    val article__author = article.getString("author")
+                    val article__description = article.getString("description")
+                    val article__url = article.getString("url")
+                    val article__urlToImage = article.getString("urlToImage")
+                    val article__publishedAt = article.getString("publishedAt")
+                    arrNews.add(NewsArticle(article__source, article__author,article__title,article__description,article__url,article__urlToImage,article__publishedAt))
+                }
+                homeNewsAdapter.notifyDataSetChanged()
+            },
+            Response.ErrorListener {
+                Toast.makeText(context, "Error ${it.message}", Toast.LENGTH_SHORT).show()
+            }
+        ){
+            override fun getHeaders(): MutableMap<String, String> {
+                val headers = HashMap<String, String>()
+                headers["User-Agent"]="Mozilla/5.0"
+                return headers
+            }
+        }
+        val queue: RequestQueue = Volley.newRequestQueue(context)
+        queue.add(strReq)
         
         homeNewsAdapter = HomeNewsAdapter(arrNews){
 
