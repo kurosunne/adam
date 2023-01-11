@@ -38,7 +38,6 @@ class MainActivity : AppCompatActivity() {
         var goWarga = Intent(this,WargaActivity::class.java)
         var goPolisi = Intent(this,PolisiActivity::class.java)
         coroutine.launch {
-//            db.userDao.deleteAll()
             if (db.userDao.getLength()>0){
                 var temp : List<UserEntity> = db.userDao.fetch()
                 if (temp.get(0).access.equals("0")){
