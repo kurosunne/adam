@@ -1,50 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/color5"
-    android:orientation="vertical">
+    android:layout_height="wrap_content">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="52dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/layout_rounded" />
+        android:orientation="horizontal"
+        android:padding="10dp">
 
         <LinearLayout
-            android:layout_width="266dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            android:layout_width="wrap_content"
+            android:layout_weight="3"
+            android:orientation="vertical"
+            android:paddingLeft="10dp">
 
             <TextView
-                android:id="@+id/namaLaporan"
-                android:layout_width="wrap_content"
+                android:id="@+id/judulLaporan"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Nama Laporan"
-                android:textSize="16sp"
+                android:text="Judul Laporan"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/isiLaporan"
+                android:id="@+id/kategoriLaporan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Isi Laporan" />
-
-            <TextView
-                android:id="@+id/tglLaporan"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Tanggal Laporan" />
+                android:text="Kategori Laporan" />
 
             <TextView
                 android:id="@+id/lokasiLaporan"
@@ -52,6 +37,11 @@
                 android:layout_height="wrap_content"
                 android:text="Lokasi Laporan" />
 
+            <TextView
+                android:id="@+id/deskripsiLaporan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Deskrispi Laporan" />
         </LinearLayout>
     </LinearLayout>
 

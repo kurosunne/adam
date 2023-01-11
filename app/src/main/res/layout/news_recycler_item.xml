@@ -13,8 +13,8 @@
 
         <ImageView
             android:id="@+id/news_item_ivThumbnail"
-            android:layout_height="match_parent"
             android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             app:srcCompat="@drawable/layout_rounded" />
 

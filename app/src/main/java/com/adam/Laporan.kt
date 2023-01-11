@@ -3,7 +3,7 @@ package com.adam
 
 data class Laporan (
     var namaLaporan:String,
-    var tanggalLaporan:String,
+    var kategoriLaporan:String,
     var lokasiLaporan:String,
-    var isiLaporan:String
+    var deskripsiLaporan:String
 )
