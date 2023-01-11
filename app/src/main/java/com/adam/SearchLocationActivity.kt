@@ -5,6 +5,7 @@ import android.content.Intent
 import android.location.Address
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.*
 import com.android.volley.RequestQueue
 import com.android.volley.Response
@@ -39,7 +40,7 @@ class SearchLocationActivity : AppCompatActivity() {
             val item = adapterView.getItemAtPosition(i) as Location
             val resultIntent = Intent().apply {
                 putExtra("location__judul", item.address)
-                putExtra("location__id", item.id)
+                putExtra("location__position", item.position)
             }
             setResult(Activity.RESULT_OK, resultIntent)
             finish()
@@ -55,10 +56,13 @@ class SearchLocationActivity : AppCompatActivity() {
                         val locations = res.getJSONArray("items")
                         for (i in 0 until locations.length()){
                             val location = locations.getJSONObject(i)
+                            val lng:Double = location.getJSONObject("position").getDouble("lng")
+                            val lat:Double = location.getJSONObject("position").getDouble("lat")
+                            Log.d("Location", "${lng}, ${lat}")
                             val location__judul = location.getString("title")
-                            val location__id = location.getString("id")
+                            val location__position = "${lng}, ${lat}"
                             val location__alamat = location.getJSONObject("address").getString("label")
-                            listAddress.add(Location(location__judul, location__id,location__alamat))
+                            listAddress.add(Location(location__judul, location__position,location__alamat))
                         }
                         locationListAdapter.notifyDataSetChanged()
                     },

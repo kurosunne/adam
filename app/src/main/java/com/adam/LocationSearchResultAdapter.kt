@@ -29,7 +29,7 @@ class LocationSearchResultAdapter(
         }
         val location = results[position]
         holder.location_tvTitle.text = location.title
-        holder.location_tvTitle.tag = location.id
+        holder.location_tvTitle.tag = location.position
         holder.location_tvAddress.text = location.address
 
         return v
