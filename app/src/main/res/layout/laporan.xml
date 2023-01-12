@@ -23,24 +23,28 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Judul Laporan"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/kategoriLaporan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textSize="15sp"
                 android:text="Kategori Laporan" />
 
             <TextView
                 android:id="@+id/lokasiLaporan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textSize="15sp"
                 android:text="Lokasi Laporan" />
 
             <TextView
                 android:id="@+id/deskripsiLaporan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textSize="15sp"
                 android:text="Deskrispi Laporan" />
         </LinearLayout>
     </LinearLayout>
