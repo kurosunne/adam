@@ -19,7 +19,7 @@ class LaporanPolisiFragment : Fragment() {
     private lateinit var rv: RecyclerView
     private var listlaporan: MutableList<Laporan> = mutableListOf()
     private lateinit var laporanAdapter: LaporanAdapter
-    val WS_HOST = "http://10.0.2.2:3000/api"
+    val WS_HOST = "https://adam.mikhaelchris.my.id/api"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

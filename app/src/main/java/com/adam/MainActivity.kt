@@ -3,6 +3,7 @@ package com.adam
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -22,7 +23,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var etPassword:EditText
     lateinit var btLogin:Button
     lateinit var btRegister:Button
-    val WS_HOST = "http://10.0.2.2:3000/api"
+    val WS_HOST = "https://adam.mikhaelchris.my.id/api"
     lateinit var db : AppDatabase
     val coroutine = CoroutineScope(Dispatchers.IO)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -66,6 +67,7 @@ class MainActivity : AppCompatActivity() {
                     Method.POST,
                     "$WS_HOST/login",
                     Response.Listener {
+                        Log.d("tes",it.toString())
                         var obj : JSONObject = JSONObject(it.toString())
                         Toast.makeText(this, obj.getString("message"), Toast.LENGTH_SHORT).show()
                         if (obj.getString("message").equals("logged in")){

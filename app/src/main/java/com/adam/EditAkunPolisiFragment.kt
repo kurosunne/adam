@@ -25,7 +25,7 @@ class EditAkunPolisiFragment : Fragment() {
     private lateinit var btLogout: Button
     private lateinit var etPassword: EditText
     private var oldemail=""
-    val WS_HOST = "http://10.0.2.2:3000/api"
+    val WS_HOST = "https://adam.mikhaelchris.my.id/api"
     lateinit var db : AppDatabase
     val coroutine = CoroutineScope(Dispatchers.IO)
 

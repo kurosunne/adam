@@ -3,6 +3,7 @@ package com.adam
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.*
 import com.android.volley.RequestQueue
 import com.android.volley.Response
@@ -17,7 +18,7 @@ class RegisterActivity : AppCompatActivity() {
     lateinit var spRole : Spinner
     lateinit var btLogin: Button
     lateinit var btRegister: Button
-    val WS_HOST = "http://10.0.2.2:3000/api"
+    val WS_HOST = "https://adam.mikhaelchris.my.id/api"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
@@ -63,7 +64,7 @@ class RegisterActivity : AppCompatActivity() {
                             Toast.makeText(this,"Berhasil Membuat Akun",Toast.LENGTH_SHORT).show()
                         },
                         Response.ErrorListener {
-
+                            Log.d("tes",it.message.toString())
                         }
                     ){
                         override fun getParams(): MutableMap<String,String>? {

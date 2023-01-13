@@ -27,7 +27,7 @@ class TambahLaporanFragment : Fragment() {
     private lateinit var lapor_btLapor:Button
     lateinit var db : AppDatabase
     val coroutine = CoroutineScope(Dispatchers.IO)
-    val WS_HOST = "http://10.0.2.2:3000/api"
+    val WS_HOST = "https://adam.mikhaelchris.my.id/api"
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
