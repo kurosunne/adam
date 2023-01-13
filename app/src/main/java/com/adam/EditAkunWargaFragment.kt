@@ -25,6 +25,7 @@ class EditAkunWargaFragment : Fragment() {
     private lateinit var etNama: EditText
     private lateinit var etPassword: EditText
     private var oldemail=""
+    private var newemail=""
     val WS_HOST = "https://adam.mikhaelchris.my.id/api"
     lateinit var db : AppDatabase
     val coroutine = CoroutineScope(Dispatchers.IO)
@@ -63,13 +64,13 @@ class EditAkunWargaFragment : Fragment() {
                     Method.PUT,
                     "$WS_HOST/user",
                     Response.Listener {
-                        coroutine.launch{
-                            var temp: List<UserEntity> = db.userDao.fetch()
-                            etEmail.setText(temp.get(0).email)
-                            etNama.setText(temp.get(0).fullName)
-                            oldemail = etEmail.text.toString()
-                            Log.d("Debug Email 2", oldemail)
-                        }
+//                        coroutine.launch{
+//                            var temp: List<UserEntity> = db.userDao.fetch()
+//                            etEmail.setText(temp.get(0).email)
+//                            etNama.setText(temp.get(0).fullName)
+//                            oldemail = etEmail.text.toString()
+//                        }
+                        etEmail.setText(newemail)
                         Toast.makeText(view.context,"Berhasil update akun",Toast.LENGTH_SHORT).show()
                     },
                     Response.ErrorListener {
@@ -80,6 +81,7 @@ class EditAkunWargaFragment : Fragment() {
                         val params = HashMap<String, String>()
                         params["oldEmail"] = oldemail
                         params["email"] = etEmail.text.toString()
+                        newemail = etEmail.text.toString()
                         params["password"] = etPassword.text.toString()
                         params["fullName"] = etNama.text.toString()
                         return params

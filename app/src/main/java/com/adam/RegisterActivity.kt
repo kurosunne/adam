@@ -52,7 +52,8 @@ class RegisterActivity : AppCompatActivity() {
             }else{
                 if (!etPassword.text.toString().equals(etConfirm.text.toString())){
                     Toast.makeText(this,"Password & Confirm Password Harus Sama",Toast.LENGTH_SHORT).show()
-                }else{
+                }
+                else{
                     val strReq = object:StringRequest(
                         Method.POST,
                         "$WS_HOST/register",
@@ -64,7 +65,7 @@ class RegisterActivity : AppCompatActivity() {
                             Toast.makeText(this,"Berhasil Membuat Akun",Toast.LENGTH_SHORT).show()
                         },
                         Response.ErrorListener {
-                            Log.d("tes",it.message.toString())
+                            Toast.makeText(this,"Panjang password minimal 8",Toast.LENGTH_SHORT).show()
                         }
                     ){
                         override fun getParams(): MutableMap<String,String>? {
