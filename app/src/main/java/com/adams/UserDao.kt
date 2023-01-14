@@ -1,4 +1,4 @@
-package com.adam
+package com.adams
 
 import androidx.room.Dao
 import androidx.room.Insert

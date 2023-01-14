@@ -1,4 +1,4 @@
-package com.adam
+package com.adams
 
 import android.view.LayoutInflater
 import android.view.View

@@ -1,8 +1,7 @@
-package com.adam
+package com.adams
 
 import android.app.Activity
 import android.content.Intent
-import android.location.Address
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log

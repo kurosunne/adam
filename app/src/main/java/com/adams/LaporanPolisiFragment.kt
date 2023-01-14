@@ -1,4 +1,4 @@
-package com.adam
+package com.adams
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

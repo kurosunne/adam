@@ -33,3 +33,4 @@ local.properties
 /databaseAdam/.idea
 /databaseAdam/.vscode
 *.aab
+.idea/deploymentTargetDropDown.xml

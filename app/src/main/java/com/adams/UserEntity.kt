@@ -1,4 +1,4 @@
-package com.adam
+package com.adams
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

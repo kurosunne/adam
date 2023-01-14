@@ -1,4 +1,4 @@
-package com.adam
+package com.adams
 
 import android.app.Activity
 import android.content.Context

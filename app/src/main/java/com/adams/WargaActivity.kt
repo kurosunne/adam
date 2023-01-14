@@ -1,10 +1,8 @@
-package com.adam
+package com.adams
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.FrameLayout
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import java.text.NumberFormat
 import java.util.*
 
 class WargaActivity : AppCompatActivity() {

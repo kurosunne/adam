@@ -1,4 +1,4 @@
-package com.adam
+package com.adams
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -14,9 +14,7 @@ import com.android.volley.toolbox.Volley
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import org.json.JSONArray
 import org.json.JSONObject
-import kotlin.math.log
 
 class MainActivity : AppCompatActivity() {
     lateinit var etEmail:EditText

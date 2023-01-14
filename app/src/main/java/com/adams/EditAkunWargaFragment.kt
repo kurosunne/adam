@@ -1,8 +1,7 @@
-package com.adam
+package com.adams
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -59,6 +58,9 @@ class EditAkunWargaFragment : Fragment() {
             if(etNama.toString().isEmpty() || etEmail.toString().isEmpty()){
                 Toast.makeText(view.context,"Semua Field Harus Terisi", Toast.LENGTH_SHORT).show()
             }
+            else if(!android.util.Patterns.EMAIL_ADDRESS.matcher(etEmail.text.toString()).matches()){
+                Toast.makeText(view.context,"Format Email Salah",Toast.LENGTH_SHORT).show()
+            }
             else{
                 val strReq = object: StringRequest(
                     Method.PUT,
@@ -74,7 +76,8 @@ class EditAkunWargaFragment : Fragment() {
                         Toast.makeText(view.context,"Berhasil update akun",Toast.LENGTH_SHORT).show()
                     },
                     Response.ErrorListener {
-                        Toast.makeText(view.context, it.message.toString(), Toast.LENGTH_SHORT).show()
+                        Toast.makeText(view.context,"Panjang password minimal 8",Toast.LENGTH_SHORT).show()
+
                     }
                 ){
                     override fun getParams(): MutableMap<String,String>? {

@@ -1,9 +1,8 @@
-package com.adam
+package com.adams
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.*
 import com.android.volley.RequestQueue
 import com.android.volley.Response

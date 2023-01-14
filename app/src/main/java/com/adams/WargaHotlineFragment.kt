@@ -1,4 +1,4 @@
-package com.adam
+package com.adams
 
 import android.content.Intent
 import android.net.Uri

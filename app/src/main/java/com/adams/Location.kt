@@ -1,4 +1,4 @@
-package com.adam
+package com.adams
 
 data class Location (
     val title:String,
